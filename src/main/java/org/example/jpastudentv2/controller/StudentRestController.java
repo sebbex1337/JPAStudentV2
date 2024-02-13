@@ -17,6 +17,11 @@ public class StudentRestController {
 
     @Autowired
     StudentRepository studentRepository;
+
+    @GetMapping("/")
+    public String hello() {
+        return "Du er i roden af JPAStudentV2";
+    }
     @GetMapping("/students")
     public List<Student> students() {
         return studentRepository.findAll();
